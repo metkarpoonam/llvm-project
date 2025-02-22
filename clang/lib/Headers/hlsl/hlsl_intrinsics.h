@@ -44,7 +44,7 @@ namespace hlsl {
 /// \fn T or(T x, T y)
 /// \brief Returns the bitwise OR of the two input values, \a x and \a y.
 /// \param x The first input value and y The second input value.
-/// 
+///
 /// \returns The bitwise OR of the two input values.
 
 _HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
