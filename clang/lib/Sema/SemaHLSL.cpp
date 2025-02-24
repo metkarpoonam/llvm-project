@@ -2602,6 +2602,10 @@ bool SemaHLSL::CheckBuiltinFunctionCall(unsigned BuiltinID, CallExpr *TheCall) {
     // Ensure input expr type is a scalar/vector and the same as the return type
     if (CheckAnyScalarOrVector(&SemaRef, TheCall, 0))
       return true;
+
+    // return type is the same as the input type
+    TheCall->setType(ArgTyA);
+
     break;
   }
   }
