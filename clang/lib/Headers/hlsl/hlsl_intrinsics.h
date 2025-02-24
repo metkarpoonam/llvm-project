@@ -37,24 +37,6 @@ namespace hlsl {
 #define _HLSL_16BIT_AVAILABILITY_STAGE(environment, version, stage)
 #endif
 
-//===----------------------------------------------------------------------===//
-// or builtins
-//===----------------------------------------------------------------------===//
-
-/// \fn T or(T x, T y)
-/// \brief Returns the bitwise OR of the two input values, \a x and \a y.
-/// \param x The first input value and y The second input value.
-///
-/// \returns The bitwise OR of the two input values.
-
-_HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
-bool or (bool, bool);
-_HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
-bool2 or (bool2, bool2);
-_HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
-bool3 or (bool3, bool3);
-_HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
-bool4 or (bool4, bool4);
 
 //===----------------------------------------------------------------------===//
 // abs builtins
@@ -940,6 +922,25 @@ template <int N>
 const inline float distance(vector<float, N> X, vector<float, N> Y) {
   return __detail::distance_vec_impl(X, Y);
 }
+
+//===----------------------------------------------------------------------===//
+// or builtins
+//===----------------------------------------------------------------------===//
+
+/// \fn T or(T x, T y)
+/// \brief Returns the bitwise OR of the two input values, \a x and \a y.
+/// \param x The first input value and y The second input value.
+///
+/// \returns The logically OR a vector and retuens bool vector.
+
+_HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
+bool or (bool, bool);
+_HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
+bool2 or (bool2, bool2);
+_HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
+bool3 or (bool3, bool3);
+_HLSL_BUILTIN_ALIAS(__builtin_hlsl_or)
+bool4 or (bool4, bool4);
 
 //===----------------------------------------------------------------------===//
 // dot product builtins
